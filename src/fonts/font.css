@@ -1,0 +1,10 @@
+@font-face {
+  src:
+    url(./Maza-W00-Regular.woff2) format('woff2'),
+    url(./Maza-W00-Regular.woff) format('woff'),
+    url(./Maza-W00-Regular.ttf) format('truetype');
+  font-family: 'Maza';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
