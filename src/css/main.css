@@ -1,0 +1,15 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}

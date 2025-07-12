@@ -1,0 +1,30 @@
+@import '../fonts/font.css';
+
+:root {
+  --white-primary: #ffffff;
+
+  --grey-primary: #f4f4f4;
+  --grey-secondary: #d4d9dd;
+
+  --grey-dark-primary: #343a3f;
+
+  --blue-primary: #4888ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--white-primary);
+  font-family: 'Maza', sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
