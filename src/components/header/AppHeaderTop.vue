@@ -14,7 +14,7 @@
 
 <script setup>
 import { phoneNumber, workDays, workHours } from '@/js/constants'
-import { useResizeMedium } from '../../use/useResizeMedium'
+import { useResizeMedium } from '@/use/useResizeMedium'
 import AppHeaderTopButton from './AppHeaderTopButton.vue'
 import AppHeaderTopWorkTime from './AppHeaderTopWorkTime.vue'
 import AppHeaderTopNav from './AppHeaderTopNav.vue'

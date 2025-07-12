@@ -1,12 +1,18 @@
 <template>
-  <header>
+  <header class="header">
     <AppHeaderTop />
-    HEADER
+    <AppHeaderContent />
   </header>
 </template>
 
 <script setup>
 import AppHeaderTop from './AppHeaderTop.vue'
+import AppHeaderContent from './AppHeaderContent.vue'
 </script>
 
-<style scoped></style>
+<style scoped>
+.header {
+  position: sticky;
+  top: -34px;
+}
+</style>

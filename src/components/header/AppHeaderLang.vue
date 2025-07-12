@@ -50,6 +50,7 @@ const toggleLang = (id) => {
   align-items: center;
   gap: 7px;
   width: fit-content;
+  margin-left: 37px;
 }
 .headerLang__image {
   width: 21px;
@@ -78,6 +79,7 @@ const toggleLang = (id) => {
 }
 .headerLang__text_active {
   opacity: 1;
+  cursor: auto;
 }
 .headerLang__text_active:hover {
   color: var(--grey-dark-primary);

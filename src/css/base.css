@@ -5,6 +5,9 @@
 
   --grey-primary: #f4f4f4;
   --grey-secondary: #d4d9dd;
+  /* --grey-dark-thirdary: #e8e8e8; */
+
+  --grey-medium-primary: #d4d9dd;
 
   --grey-dark-primary: #343a3f;
 
@@ -20,6 +23,8 @@
 }
 
 body {
+  /* display: flex;
+  flex-direction: column; */
   min-height: 100vh;
   background: var(--white-primary);
   font-family: 'Maza', sans-serif;
