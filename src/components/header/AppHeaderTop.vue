@@ -45,15 +45,15 @@ const { isScreenMedium } = useResizeMedium()
 }
 @media (max-width: 1023px) {
   .headerTop__container {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 767px) {
   .headerTop__container {
     height: 26px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .headerTop__left {
     justify-content: space-between;

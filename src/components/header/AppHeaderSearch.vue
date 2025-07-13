@@ -63,14 +63,21 @@ const searshSubmit = () => {
   color: rgba(52, 58, 63, 0.5);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .headerSearch {
-    height: 46px;
+    height: 40px;
     padding: 3px;
   }
   .headerSearch__input {
     padding-left: 13px;
     padding-right: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .headerSearch {
+    height: 46px;
+    margin-left: 0;
   }
 }
 </style>

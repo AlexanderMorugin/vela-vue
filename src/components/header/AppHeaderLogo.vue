@@ -6,7 +6,7 @@
 .headerLogo {
   width: 80px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .headerLogo {
     width: 56px;
   }

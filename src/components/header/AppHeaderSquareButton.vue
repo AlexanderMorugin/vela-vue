@@ -1,5 +1,5 @@
 <template>
-  <button class="headerSquareButton">
+  <button class="headerSquareButton" @click="$emit('handleClick')">
     <!-- Картинка для кнопки Избранные -->
     <svg
       v-if="props.name === 'favorite'"
@@ -154,15 +154,21 @@
         d="M10.5586 8.88928V10.9734C10.5586 11.7681 11.2052 12.4147 11.9999 12.4147C12.7946 12.4147 13.4412 11.7682 13.4412 10.9734V8.88928H10.5586Z"
       />
     </svg>
+
+    <!-- Бейдж количества товаров в Корзине -->
+    <div v-if="props.cartItems" class="headerSquareButton__cartBadge">{{ props.cartItems }}</div>
   </button>
 </template>
 
 <script setup>
-const props = defineProps(['name'])
+const props = defineProps(['name', 'cartItems'])
+// eslint-disable-next-line no-unused-vars
+const emit = defineEmits(['handleClick'])
 </script>
 
 <style scoped>
 .headerSquareButton {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,8 +195,23 @@ const props = defineProps(['name'])
 .headerSquareButton:hover .headerSquareButton__image {
   fill: var(--blue-primary);
 }
+.headerSquareButton__cartBadge {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background: var(--blue-primary);
+  border-radius: 50%;
+  font-family: 'Maza';
+  font-size: 13px;
+  color: var(--white-primary);
+}
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .headerSquareButton {
     width: 40px;
     height: 40px;
@@ -198,6 +219,10 @@ const props = defineProps(['name'])
   .headerSquareButton__imageBox {
     width: 20px;
     height: 20px;
+  }
+  .headerSquareButton__cartBadge {
+    top: -10px;
+    right: -4px;
   }
 }
 

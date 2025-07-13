@@ -29,15 +29,22 @@
 .headerMenuButton__image {
   width: 41px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .headerMenuButton {
     width: 40px;
     height: 40px;
+    margin-left: 15px;
   }
   .headerMenuButton__image {
     width: 27px;
     height: 15px;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .headerMenuButton {
+    margin-left: 0;
   }
 }
 </style>

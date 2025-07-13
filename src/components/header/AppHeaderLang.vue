@@ -90,7 +90,10 @@ const toggleLang = (id) => {
   background: var(--grey-dark-primary);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
+  .headerLang {
+    margin-left: 17px;
+  }
   .headerLang__image {
     width: 14px;
   }

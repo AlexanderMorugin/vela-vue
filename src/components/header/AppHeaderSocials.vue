@@ -67,7 +67,10 @@ const goToSocials = (arg) => {
   fill: var(--blue-primary);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
+  .headerSocials {
+    margin-left: 14px;
+  }
   .headerSocials__button {
     width: 40px;
     height: 40px;
