@@ -8,10 +8,13 @@
   /* --grey-dark-thirdary: #e8e8e8; */
 
   --grey-medium-primary: #d4d9dd;
+  --grey-medium-secondary: #d3d3d3;
 
   --grey-dark-primary: #343a3f;
 
   --blue-primary: #4888ff;
+
+  --brown-primary: #cdbecd;
 }
 
 *,

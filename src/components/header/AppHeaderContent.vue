@@ -8,6 +8,10 @@
       <AppHeaderLang />
 
       <AppHeaderSocials />
+
+      <AppHeaderSquareButton name="favorite" />
+      <AppHeaderSquareButton name="profile" />
+      <AppHeaderSquareButton name="cart" />
     </div>
   </div>
 </template>
@@ -18,6 +22,7 @@ import AppHeaderMenuButton from './AppHeaderMenuButton.vue'
 import AppHeaderSearch from './AppHeaderSearch.vue'
 import AppHeaderLang from './AppHeaderLang.vue'
 import AppHeaderSocials from './AppHeaderSocials.vue'
+import AppHeaderSquareButton from './AppHeaderSquareButton.vue'
 </script>
 
 <style scoped>

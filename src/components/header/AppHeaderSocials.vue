@@ -1,6 +1,7 @@
 <template>
   <div class="headerSocials">
-    <button class="headerSocials__button">
+    <!-- Кнопка Телеграм -->
+    <button class="headerSocials__button" @click="goToSocials('Telegram')">
       <svg class="headerSocials__imageSvg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           class="headerSocials__image"
@@ -9,7 +10,9 @@
         />
       </svg>
     </button>
-    <button class="headerSocials__button">
+
+    <!-- Кнопка Вотсап -->
+    <button class="headerSocials__button" @click="goToSocials('Whatsapp')">
       <svg class="headerSocials__imageSvg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           class="headerSocials__image"
@@ -21,6 +24,16 @@
     </button>
   </div>
 </template>
+
+<script setup>
+const goToSocials = (arg) => {
+  if (arg === 'Telegram') {
+    console.log('Go to Telegram')
+  } else {
+    console.log('Go to Whatsapp')
+  }
+}
+</script>
 
 <style scoped>
 .headerSocials {
