@@ -5,10 +5,12 @@
 <style scoped>
 .headerLogo {
   width: 80px;
+  height: 80px;
 }
 @media (max-width: 1023px) {
   .headerLogo {
     width: 56px;
+    height: 56px;
   }
 }
 </style>

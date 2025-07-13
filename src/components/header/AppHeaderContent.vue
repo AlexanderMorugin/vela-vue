@@ -1,7 +1,11 @@
 <template>
   <div class="headerContent">
     <!-- Контент шапки сайта при ширине экрана от бескрайнего до 768px -->
-    <div v-if="!isScreenMedium" class="headerContent__container">
+    <div
+      v-if="!isScreenMedium"
+      class="headerContent__container"
+      :class="isScroll ? 'headerContent__container_small' : ''"
+    >
       <AppHeaderLogo />
       <AppHeaderMenuButton />
       <AppHeaderSearch />
@@ -27,7 +31,6 @@
           <AppHeaderSquareButton name="cart" cartItems="20" @handleClick="handleClick('cart')" />
         </div>
       </div>
-
       <AppHeaderSearch />
     </div>
   </div>
@@ -41,6 +44,9 @@ import AppHeaderLang from './AppHeaderLang.vue'
 import AppHeaderSocials from './AppHeaderSocials.vue'
 import AppHeaderSquareButton from './AppHeaderSquareButton.vue'
 import { useResizeMedium } from '@/use/useResizeMedium'
+import { useScroll } from '@/use/useScroll'
+
+const { isScroll } = useScroll()
 
 const { isScreenMedium } = useResizeMedium()
 
@@ -64,13 +70,18 @@ const handleClick = (args) => {
 .headerContent__container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 1440px;
-  height: 100px;
+  height: 146px;
   margin: 0 auto;
+  padding-top: 16px;
   padding-left: 40px;
   padding-right: 40px;
   border: 1px solid red;
+}
+.headerContent__container_small {
+  align-items: center;
+  height: 100px;
+  padding-top: 0;
 }
 .headerContent__profile {
   display: flex;
@@ -102,7 +113,6 @@ const handleClick = (args) => {
   .headerContent__container {
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: flex-start; */
     height: 146px;
     padding-left: 16px;
     padding-right: 16px;

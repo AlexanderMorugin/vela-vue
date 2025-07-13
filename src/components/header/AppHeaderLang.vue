@@ -50,6 +50,7 @@ const toggleLang = (id) => {
   align-items: center;
   gap: 7px;
   width: fit-content;
+  height: 48px;
   margin-left: 37px;
 }
 .headerLang__image {
@@ -92,6 +93,7 @@ const toggleLang = (id) => {
 
 @media (max-width: 1023px) {
   .headerLang {
+    height: 40px;
     margin-left: 17px;
   }
   .headerLang__image {
