@@ -33,6 +33,8 @@
       </div>
       <AppHeaderSearch />
     </div>
+
+    <AppHeaderMenu />
   </div>
 </template>
 
@@ -43,6 +45,7 @@ import AppHeaderSearch from './AppHeaderSearch.vue'
 import AppHeaderLang from './AppHeaderLang.vue'
 import AppHeaderSocials from './AppHeaderSocials.vue'
 import AppHeaderSquareButton from './AppHeaderSquareButton.vue'
+import AppHeaderMenu from './AppHeaderMenu.vue'
 import { useResizeMedium } from '@/use/useResizeMedium'
 import { useScroll } from '@/use/useScroll'
 
