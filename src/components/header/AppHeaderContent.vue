@@ -11,12 +11,14 @@
       <!-- Основной контент шапки -->
       <div class="headerContent__subContainer">
         <div class="headerContent__subLine">
-          <AppHeaderMenuButton />
+          <AppHeaderMenuButton @openMenuModal="openMenuModal" />
           <AppHeaderSearch />
           <AppHeaderSocials />
           <AppHeaderLang />
         </div>
         <AppHeaderMenu v-if="!isScroll" />
+
+        <AppHeaderMenuModal v-if="isMenuModalOpen" />
       </div>
 
       <!-- Блок Профиля в правом углу -->
@@ -57,12 +59,15 @@ import AppHeaderSocials from './AppHeaderSocials.vue'
 import AppHeaderSquareButton from './AppHeaderSquareButton.vue'
 import AppHeaderMenu from './AppHeaderMenu.vue'
 import AppHeaderMakeCompButton from './AppHeaderMakeCompButton.vue'
+import AppHeaderMenuModal from './modal/AppHeaderMenuModal.vue'
 import { useResizeMedium } from '@/use/useResizeMedium'
 import { useScroll } from '@/use/useScroll'
+import { ref } from 'vue'
 
 const { isScroll } = useScroll()
-
 const { isScreenMedium } = useResizeMedium()
+
+const isMenuModalOpen = ref(false)
 
 const handleClick = (args) => {
   if (args === 'favorite') {
@@ -74,6 +79,10 @@ const handleClick = (args) => {
   if (args === 'cart') {
     console.log('Go to Cart Page')
   }
+}
+
+const openMenuModal = () => {
+  isMenuModalOpen.value = !isMenuModalOpen.value
 }
 </script>
 

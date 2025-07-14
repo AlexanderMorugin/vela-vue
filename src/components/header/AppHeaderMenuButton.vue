@@ -1,5 +1,5 @@
 <template>
-  <button class="headerMenuButton">
+  <button class="headerMenuButton" @click="$emit('openMenuModal')">
     <img
       src="../../img/img-header-menu-button.svg"
       alt="Кнопка меню"
@@ -8,7 +8,10 @@
   </button>
 </template>
 
-<script setup></script>
+<script setup>
+// eslint-disable-next-line no-unused-vars
+const emit = defineEmits(['openMenuModal'])
+</script>
 
 <style scoped>
 .headerMenuButton {
@@ -20,7 +23,6 @@
   height: 48px;
   background: var(--blue-primary);
   border-radius: 8px;
-  transition: 0.3s ease all;
 }
 .headerMenuButton:hover {
   animation: shine 3s forwards;
