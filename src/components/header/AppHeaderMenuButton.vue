@@ -23,7 +23,21 @@
   transition: 0.3s ease all;
 }
 .headerMenuButton:hover {
-  background: var(--grey-dark-primary);
+  animation: shine 3s forwards;
+  background-image: -webkit-gradient(
+    linear,
+    left center,
+    right center,
+    from var(--blue-primary),
+    color-stop(0.5, #c1d4f7),
+    to var(--blue-primary)
+  );
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--blue-primary) 0%,
+    #c1d4f7 50%,
+    var(--blue-primary) 100%
+  );
 }
 .headerMenuButton__image {
   width: 41px;
@@ -44,6 +58,15 @@
 @media (max-width: 767px) {
   .headerMenuButton {
     margin-left: 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -101px 0;
+  }
+  100% {
+    background-position: 101px 0;
   }
 }
 </style>

@@ -8,6 +8,7 @@
     >
       <AppHeaderLogo />
 
+      <!-- Основной контент шапки -->
       <div class="headerContent__subContainer">
         <div class="headerContent__subLine">
           <AppHeaderMenuButton />
@@ -15,13 +16,17 @@
           <AppHeaderSocials />
           <AppHeaderLang />
         </div>
-        <AppHeaderMenu />
+        <AppHeaderMenu v-if="!isScroll" />
       </div>
 
-      <div class="headerContent__profile">
-        <AppHeaderSquareButton name="favorite" @handleClick="handleClick('favorite')" />
-        <AppHeaderSquareButton name="profile" @handleClick="handleClick('profile')" />
-        <AppHeaderSquareButton name="cart" cartItems="20" @handleClick="handleClick('cart')" />
+      <!-- Блок Профиля в правом углу -->
+      <div class="headerContent__profileContainer">
+        <div class="headerContent__profile">
+          <AppHeaderSquareButton name="favorite" @handleClick="handleClick('favorite')" />
+          <AppHeaderSquareButton name="profile" @handleClick="handleClick('profile')" />
+          <AppHeaderSquareButton name="cart" cartItems="20" @handleClick="handleClick('cart')" />
+        </div>
+        <AppHeaderMakeCompButton v-if="!isScroll" />
       </div>
     </div>
 
@@ -51,6 +56,7 @@ import AppHeaderLang from './AppHeaderLang.vue'
 import AppHeaderSocials from './AppHeaderSocials.vue'
 import AppHeaderSquareButton from './AppHeaderSquareButton.vue'
 import AppHeaderMenu from './AppHeaderMenu.vue'
+import AppHeaderMakeCompButton from './AppHeaderMakeCompButton.vue'
 import { useResizeMedium } from '@/use/useResizeMedium'
 import { useScroll } from '@/use/useScroll'
 
@@ -103,11 +109,17 @@ const handleClick = (args) => {
   justify-content: space-between;
   width: 100%;
 }
+.headerContent__profileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 229px;
+  padding-left: 53px;
+}
 .headerContent__profile {
   display: flex;
   gap: 16px;
-  width: fit-content;
-  padding-left: 53px;
 }
 .headerContent__topLine {
   display: flex;
@@ -126,9 +138,12 @@ const handleClick = (args) => {
   .headerContent__subContainer {
     padding-left: 15px;
   }
+  .headerContent__profileContainer {
+    max-width: 154px;
+    padding-left: 14px;
+  }
   .headerContent__profile {
     gap: 10px;
-    padding-left: 14px;
   }
 }
 
