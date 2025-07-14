@@ -51,7 +51,7 @@ const toggleLang = (id) => {
   gap: 7px;
   width: fit-content;
   height: 48px;
-  margin-left: 37px;
+  padding-left: 37px;
 }
 .headerLang__image {
   width: 21px;
@@ -94,7 +94,7 @@ const toggleLang = (id) => {
 @media (max-width: 1023px) {
   .headerLang {
     height: 40px;
-    margin-left: 17px;
+    padding-left: 14px;
   }
   .headerLang__image {
     width: 14px;

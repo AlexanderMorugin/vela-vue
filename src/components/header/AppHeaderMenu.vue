@@ -21,6 +21,8 @@ import { headerMenu } from '@/js/header-menu'
   justify-content: space-between;
   gap: 18px;
   width: 100%;
+  max-width: 901px;
+  padding: 0;
 }
 .headerMenu__item {
   width: 100%;
@@ -34,6 +36,8 @@ import { headerMenu } from '@/js/header-menu'
   height: 42px;
   background: var(--grey-primary);
   border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .headerMenu__img {
   width: 20px;
@@ -45,6 +49,7 @@ import { headerMenu } from '@/js/header-menu'
   font-family: 'Maza';
   font-size: 16px;
   color: var(--grey-dark-primary);
+  white-space: nowrap;
   transition: 0.3s ease all;
 }
 .headerMenu__button:hover .headerMenu__img {
@@ -52,5 +57,32 @@ import { headerMenu } from '@/js/header-menu'
 }
 .headerMenu__button:hover .headerMenu__text {
   color: var(--blue-primary);
+}
+
+@media (max-width: 1279px) {
+  .headerMenu {
+    gap: 10px;
+  }
+  .headerMenu__button {
+    gap: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .headerMenu__img {
+    width: 14px;
+    height: 14px;
+  }
+  .headerMenu__text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .headerMenu {
+    gap: 4px;
+  }
+  .headerMenu__img {
+    display: none;
+  }
 }
 </style>

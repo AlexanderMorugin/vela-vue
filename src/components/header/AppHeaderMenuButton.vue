@@ -20,7 +20,6 @@
   height: 48px;
   background: var(--blue-primary);
   border-radius: 8px;
-  margin-left: 25px;
   transition: 0.3s ease all;
 }
 .headerMenuButton:hover {
@@ -29,11 +28,11 @@
 .headerMenuButton__image {
   width: 41px;
 }
+
 @media (max-width: 1023px) {
   .headerMenuButton {
-    width: 40px;
+    max-width: 48px;
     height: 40px;
-    margin-left: 15px;
   }
   .headerMenuButton__image {
     width: 27px;

@@ -67,6 +67,7 @@ const searshSubmit = () => {
   .headerSearch {
     height: 40px;
     padding: 3px;
+    margin-left: 14px;
   }
   .headerSearch__input {
     padding-left: 13px;

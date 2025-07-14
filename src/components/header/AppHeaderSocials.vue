@@ -40,7 +40,7 @@ const goToSocials = (arg) => {
   display: flex;
   gap: 10px;
   width: fit-content;
-  margin-left: 24px;
+  padding-left: 28px;
 }
 .headerSocials__button {
   display: flex;
@@ -69,7 +69,7 @@ const goToSocials = (arg) => {
 
 @media (max-width: 1023px) {
   .headerSocials {
-    margin-left: 14px;
+    padding-left: 14px;
   }
   .headerSocials__button {
     width: 40px;

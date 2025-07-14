@@ -7,10 +7,17 @@
       :class="isScroll ? 'headerContent__container_small' : ''"
     >
       <AppHeaderLogo />
-      <AppHeaderMenuButton />
-      <AppHeaderSearch />
-      <AppHeaderSocials />
-      <AppHeaderLang />
+
+      <div class="headerContent__subContainer">
+        <div class="headerContent__subLine">
+          <AppHeaderMenuButton />
+          <AppHeaderSearch />
+          <AppHeaderSocials />
+          <AppHeaderLang />
+        </div>
+        <AppHeaderMenu />
+      </div>
+
       <div class="headerContent__profile">
         <AppHeaderSquareButton name="favorite" @handleClick="handleClick('favorite')" />
         <AppHeaderSquareButton name="profile" @handleClick="handleClick('profile')" />
@@ -33,8 +40,6 @@
       </div>
       <AppHeaderSearch />
     </div>
-
-    <AppHeaderMenu />
   </div>
 </template>
 
@@ -86,11 +91,23 @@ const handleClick = (args) => {
   height: 100px;
   padding-top: 0;
 }
+.headerContent__subContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-left: 35px;
+}
+.headerContent__subLine {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .headerContent__profile {
   display: flex;
   gap: 16px;
   width: fit-content;
-  margin-left: 53px;
+  padding-left: 53px;
 }
 .headerContent__topLine {
   display: flex;
@@ -103,12 +120,15 @@ const handleClick = (args) => {
 
 @media (max-width: 1023px) {
   .headerContent__container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .headerContent__subContainer {
+    padding-left: 15px;
   }
   .headerContent__profile {
     gap: 10px;
-    margin-left: 13px;
+    padding-left: 14px;
   }
 }
 
