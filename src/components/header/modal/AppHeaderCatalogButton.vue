@@ -1,13 +1,25 @@
 <template>
-  <button class="headerCatalogButton" @click="$emit('showContent')">
+  <button
+    :class="['headerCatalogButton', { headerCatalogButton_active: props.item.id === currentId }]"
+    @click="$emit('showContent')"
+  >
     <div class="headerCatalogButton__textBox">
-      <img :src="props.img" :alt="props.text" class="headerCatalogButton__image" />
-      <span class="headerCatalogButton__text">{{ props.text }}</span>
+      <img :src="props.item.img" :alt="props.item.text" class="headerCatalogButton__image" />
+      <span class="headerCatalogButton__text">{{ props.item.text }}</span>
     </div>
     <!-- Стрелка -->
-    <svg width="8" height="14" fill="none" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      v-if="props.item.category"
+      class="headerCatalogButton__arrowBox"
+      fill="none"
+      viewBox="0 0 8 14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        class="headerCatalogButton__arrow"
+        :class="[
+          'headerCatalogButton__arrow',
+          { headerCatalogButton__arrow_active: props.item.id === currentId },
+        ]"
         d="M1 13L7 7L1 1"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -19,7 +31,7 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 const emit = defineEmits(['showContent'])
-const props = defineProps(['img', 'text'])
+const props = defineProps(['item', 'currentId'])
 </script>
 
 <style scoped>
@@ -27,13 +39,17 @@ const props = defineProps(['img', 'text'])
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 31px;
   width: 100%;
-  max-width: 338px;
   height: 50px;
   border-bottom: 1px solid var(--grey-thirdary);
   padding-left: 30px;
   padding-right: 30px;
+}
+.headerCatalogButton_active {
+  background: var(--grey-thirdary);
+  border-bottom: 1px solid var(--white-primary);
+  cursor: auto;
 }
 .headerCatalogButton__textBox {
   display: flex;
@@ -53,12 +69,21 @@ const props = defineProps(['img', 'text'])
   white-space: nowrap;
   transition: 0.3s ease all;
 }
+.headerCatalogButton__arrowBox {
+  width: 8px;
+  height: 14px;
+}
 .headerCatalogButton__arrow {
   stroke: var(--grey-dark-primary);
   transition: 0.3s ease all;
 }
+.headerCatalogButton__arrow_active {
+  stroke: var(--blue-primary);
+  stroke-width: 2px;
+}
 .headerCatalogButton:hover {
   background: var(--grey-thirdary);
+  border-bottom: 1px solid var(--white-primary);
 }
 .headerCatalogButton:hover .headerCatalogButton__image {
   opacity: 1;
@@ -66,5 +91,32 @@ const props = defineProps(['img', 'text'])
 .headerCatalogButton:hover .headerCatalogButton__arrow {
   stroke: var(--blue-primary);
   stroke-width: 2px;
+}
+.headerCatalogButton_active:hover .headerCatalogButton__image {
+  opacity: 0.5;
+}
+
+@media (max-width: 1279px) {
+  .headerCatalogButton {
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .headerCatalogButton__textBox {
+    gap: 10px;
+  }
+  .headerCatalogButton__image {
+    width: 18px;
+    height: 18px;
+  }
+  .headerCatalogButton__text {
+    font-size: 14px;
+  }
+  .headerCatalogButton__arrowBox {
+    width: 6px;
+    height: 12px;
+  }
 }
 </style>

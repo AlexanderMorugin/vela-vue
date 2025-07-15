@@ -18,7 +18,7 @@
         </div>
         <AppHeaderMenu v-if="!isScroll" />
 
-        <AppHeaderMenuModal v-if="isMenuModalOpen" />
+        <AppHeaderMenuModal v-if="isMenuModalOpen" @closeMenuModal="closeMenuModal" />
       </div>
 
       <!-- Блок Профиля в правом углу -->
@@ -81,9 +81,8 @@ const handleClick = (args) => {
   }
 }
 
-const openMenuModal = () => {
-  isMenuModalOpen.value = !isMenuModalOpen.value
-}
+const openMenuModal = () => (isMenuModalOpen.value = !isMenuModalOpen.value)
+const closeMenuModal = () => (isMenuModalOpen.value = false)
 </script>
 
 <style scoped>
