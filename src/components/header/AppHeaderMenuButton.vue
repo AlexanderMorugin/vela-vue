@@ -1,16 +1,28 @@
 <template>
-  <button class="headerMenuButton" @click="$emit('openMenuModal')">
+  <button
+    class="headerMenuButton"
+    :class="props.isMenuModalOpen ? 'headerMenuButton_close' : 'headerMenuButton_open'"
+    @click="handleOpenModal"
+  >
     <img
-      src="../../img/img-header-menu-button.svg"
+      :src="props.isMenuModalOpen ? ButtonMenuCloseImage : ButtonMenuOpenImage"
       alt="Кнопка меню"
-      class="headerMenuButton__image"
+      :class="['headerMenuButton__image', { headerMenuButton__image_close: props.isMenuModalOpen }]"
     />
   </button>
 </template>
 
 <script setup>
-// eslint-disable-next-line no-unused-vars
-const emit = defineEmits(['openMenuModal'])
+import ButtonMenuOpenImage from '../../img/img-header-menu-button.svg'
+import ButtonMenuCloseImage from '../../img/img-header-menu-close.svg'
+
+const emit = defineEmits(['openMenuModal', 'openMenuModalMobile'])
+const props = defineProps(['isMenuModalOpen', 'isScreen'])
+
+const handleOpenModal = () => {
+  if (props.isScreen === 'desktop') emit('openMenuModal')
+  if (props.isScreen === 'mobile') emit('openMenuModalMobile')
+}
 </script>
 
 <style scoped>
@@ -21,10 +33,15 @@ const emit = defineEmits(['openMenuModal'])
   width: 100%;
   max-width: 101px;
   height: 48px;
-  background: var(--blue-primary);
   border-radius: 8px;
 }
-.headerMenuButton:hover {
+.headerMenuButton_close {
+  background: var(--grey-medium-thirdary);
+}
+.headerMenuButton_open {
+  background: var(--blue-primary);
+}
+.headerMenuButton_open:hover {
   animation: shine 3s forwards;
   background-image: -webkit-gradient(
     linear,
@@ -44,6 +61,9 @@ const emit = defineEmits(['openMenuModal'])
 .headerMenuButton__image {
   width: 41px;
 }
+.headerMenuButton__image_close {
+  width: 24px;
+}
 
 @media (max-width: 1023px) {
   .headerMenuButton {
@@ -59,6 +79,8 @@ const emit = defineEmits(['openMenuModal'])
 
 @media (max-width: 767px) {
   .headerMenuButton {
+    max-width: 40px;
+    height: 40px;
     margin-left: 0;
   }
 }

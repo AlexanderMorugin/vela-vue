@@ -65,4 +65,10 @@ const props = defineProps(['img', 'text', 'gap'])
   fill: var(--blue-primary);
   fill-opacity: 1;
 }
+
+@media (max-width: 767px) {
+  .headerTopButton__text {
+    font-size: 16px;
+  }
+}
 </style>

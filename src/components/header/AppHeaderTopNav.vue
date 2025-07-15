@@ -29,4 +29,20 @@ import { headerTopNav } from '@/js/header-top-nav'
 .headerTopNav__item:hover {
   color: var(--blue-primary);
 }
+
+@media (max-width: 767px) {
+  .headerTopNav {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 40px;
+  }
+  .headerTopNav__item {
+    line-height: 20px;
+    font-size: 16px;
+    width: 100%;
+    height: 31px;
+    border-bottom: 1px solid var(--grey-medium-thirdary);
+    padding-bottom: 10px;
+  }
+}
 </style>

@@ -72,4 +72,20 @@
     display: none;
   }
 }
+
+@media (max-width: 767px) {
+  .headerMakeCompButton {
+    height: 48px;
+    margin-top: 24px;
+  }
+  .headerMakeCompButton__imageBox {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+  }
+  .headerMakeCompButton__text {
+    font-size: 16px;
+  }
+}
 </style>

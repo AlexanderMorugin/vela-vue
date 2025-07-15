@@ -1,49 +1,55 @@
 <template>
-  <div :class="['headerMenuModal', { headerMenuModal_active: isCategoryActive }]">
-    <!-- Список каталога меню - Кнопки -->
-    <ul class="headerMenuModal__catalog">
-      <li v-for="item in headerCatalogMenu" :key="item.id">
-        <AppHeaderCatalogButton
-          :item="item"
-          :currentId="currentId"
-          @showContent="showContent(item.category, item.id)"
-        />
-      </li>
-    </ul>
+  <div :class="['', { headerMenuModalContainer: isScroll }]">
+    <div :class="['headerMenuModal', { headerMenuModal_active: isCategoryActive }]">
+      <!-- Список каталога меню - Кнопки -->
+      <ul class="headerMenuModal__catalog">
+        <li v-for="item in headerCatalogMenu" :key="item.id">
+          <AppHeaderCatalogButton
+            :item="item"
+            :currentId="currentId"
+            @showContent="showContent(item.category, item.id)"
+          />
+        </li>
+      </ul>
 
-    <!-- Список категорий и их элементов, определяется по нажатию на кнопку выше  -->
-    <ul class="headerMenuModal__categoryList">
-      <li v-for="categoryItem in category" :key="categoryItem.id" class="headerMenuModal__category">
-        <span class="headerMenuModal__categoryName">{{ categoryItem.name }}</span>
+      <!-- Список категорий и их элементов, определяется по нажатию на кнопку выше  -->
+      <ul class="headerMenuModal__categoryList">
+        <li
+          v-for="categoryItem in category"
+          :key="categoryItem.id"
+          class="headerMenuModal__category"
+        >
+          <span class="headerMenuModal__categoryName">{{ categoryItem.name }}</span>
 
-        <ul class="headerMenuModal__categoryItems">
-          <li v-for="item in categoryItem.items" :key="item.id">
-            <button class="headerMenuModal__categoryItem" @click="goToCurrentPage">
-              <div class="headerMenuModal__categoryItemTextBox">
-                <span class="headerMenuModal__categoryItemName">{{ item.text }}</span>
-                <span class="headerMenuModal__categoryItemQuantity">{{ item.quantity }}</span>
-              </div>
+          <ul class="headerMenuModal__categoryItems">
+            <li v-for="item in categoryItem.items" :key="item.id">
+              <button class="headerMenuModal__categoryItem" @click="goToCurrentPage">
+                <div class="headerMenuModal__categoryItemTextBox">
+                  <span class="headerMenuModal__categoryItemName">{{ item.text }}</span>
+                  <span class="headerMenuModal__categoryItemQuantity">{{ item.quantity }}</span>
+                </div>
 
-              <!-- Стрелка -->
-              <svg
-                width="6"
-                height="12"
-                fill="none"
-                viewBox="0 0 8 14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="headerMenuModal__categoryItemArrow"
-                  d="M1 13L7 7L1 1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </li>
-    </ul>
+                <!-- Стрелка -->
+                <svg
+                  width="6"
+                  height="12"
+                  fill="none"
+                  viewBox="0 0 8 14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="headerMenuModal__categoryItemArrow"
+                    d="M1 13L7 7L1 1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -51,6 +57,9 @@
 import { ref } from 'vue'
 import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
+import { useScroll } from '@/use/useScroll'
+
+const { isScroll } = useScroll()
 
 const emit = defineEmits(['closeMenuModal'])
 
@@ -81,6 +90,10 @@ const goToCurrentPage = () => {
 </script>
 
 <style scoped>
+.headerMenuModalContainer {
+  position: fixed;
+  top: 92px;
+}
 .headerMenuModal {
   display: flex;
   width: fit-content;

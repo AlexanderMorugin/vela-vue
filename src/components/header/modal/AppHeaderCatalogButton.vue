@@ -119,4 +119,26 @@ const props = defineProps(['item', 'currentId'])
     height: 12px;
   }
 }
+
+@media (max-width: 767px) {
+  .headerCatalogButton {
+    background: var(--grey-primary);
+    height: 48px;
+    border-bottom: none;
+    border-radius: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .headerCatalogButton__image {
+    width: 24px;
+    height: 24px;
+  }
+  .headerCatalogButton__text {
+    font-size: 16px;
+  }
+  .headerCatalogButton__arrowBox {
+    width: 8px;
+    height: 14px;
+  }
+}
 </style>

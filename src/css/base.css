@@ -9,6 +9,7 @@
 
   --grey-medium-primary: #d4d9dd;
   --grey-medium-secondary: #d3d3d3;
+  --grey-medium-thirdary: #e8e8e8;
 
   --grey-dark-primary: #343a3f;
   --grey-dark-secondary: rgb(157, 157, 157);
@@ -31,6 +32,7 @@
 body {
   /* display: flex;
   flex-direction: column; */
+  /* position: relative; */
   min-height: 100vh;
   background: var(--white-primary);
   font-family: 'Maza', sans-serif;
