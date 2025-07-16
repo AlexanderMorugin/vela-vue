@@ -10,17 +10,17 @@
       ]"
     >
       <!-- Кнопка Назад -->
-      <!-- <li>
+      <li>
         <AppHeaderBackButton
           v-if="isButtonBackActive"
-          :text="textOfButtonBack"
-          @handleBack="handleBack(textOfButtonBack)"
+          :title="currentItem.title"
+          @handleBack="handleBack(currentItem)"
         />
-      </li> -->
+      </li>
 
       <!-- Список Категорий всего каталога -->
-      <li v-for="item in menu" :key="item.id">
-        <AppHeaderCatalogButton :item="item" @showContent="showContent(item.category, item.id)" />
+      <li v-for="item in currentItem.details" :key="item.id">
+        <AppHeaderCatalogButton :item="item" @showContent="showContent(item)" />
 
         <!-- <AppHeaderCategoryButton
 
@@ -41,7 +41,7 @@
 import { ref } from 'vue'
 import AppHeaderMenuModalMobileTopBlock from './AppHeaderMenuModalMobileTopBlock.vue'
 import { headerMenu } from '@/js/header-menu'
-// import { headerCatalogMenu } from '@/js/header-catalog-menu'
+import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import AppHeaderBackButton from './AppHeaderBackButton.vue'
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
 // import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
@@ -52,39 +52,37 @@ const emit = defineEmits(['closeMenuModalMobile'])
 
 const isButtonBackActive = ref(false)
 
-const menu = ref(headerMenu.category)
-const textOfButtonBack = ref(null)
+const currentItem = ref(headerMenu)
+// const currentStepItem = ref(null)
 
-const showContent = (category, id) => {
-  // menu.value = headerMenu.category
+const showContent = (item) => {
   isButtonBackActive.value = false
-  // currentObject.value = null
 
-  const currentObject = headerMenu.category.find((item) => item.id === id)
-
-  console.log(currentObject)
-
-  if (category) {
-    menu.value = category
+  if (item.details) {
+    currentItem.value = item
+    // currentStepItem.value = item
     isButtonBackActive.value = true
 
-    // currentObject.value = headerMenu.category.find((item) => item.id === id)
-    // textOfButtonBack.value = currentObject.text
-    // menu.value = currentObject.category
-
-    // console.log(currentObject.value)
+    console.log('currentItem - ', currentItem.value)
+    // console.log('currentStepItem - ', currentStepItem.value)
   } else {
     console.log('Go to current page')
     emit('closeMenuModalMobile')
   }
 }
 
-// const handleBack = (args) => {
-//   if (args === textOfButtonBack.value) {
-//     isButtonBackActive.value = false
-//     menu.value = headerMenu.category
-//   }
-// }
+const handleBack = (item) => {
+  if (item.step === 2) {
+    currentItem.value = headerMenu
+    isButtonBackActive.value = false
+  }
+  // if (item.step === 3) {
+  //   currentItem.value = headerCatalogMenu.map((item) => item.step === 3)
+  // }
+
+  // console.log('handleBack - currentItem: ', item)
+  // console.log('handleBack - currentStepItem: ', currentStepItem.value)
+}
 
 // const goToCurrentPage = () => {
 //   console.log('Go to current page')

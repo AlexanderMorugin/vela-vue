@@ -7,7 +7,7 @@
           <AppHeaderCatalogButton
             :item="item"
             :currentId="currentId"
-            @showContent="showContent(item.category, item.id)"
+            @showContent="showContent(item)"
           />
         </li>
       </ul>
@@ -15,16 +15,16 @@
       <!-- Список категорий и их элементов, определяется по нажатию на кнопку выше  -->
       <ul class="headerMenuModal__categoryList">
         <li
-          v-for="categoryItem in category"
+          v-for="categoryItem in details"
           :key="categoryItem.id"
           class="headerMenuModal__category"
         >
-          <span class="headerMenuModal__categoryName">{{ categoryItem.text }}</span>
+          <span class="headerMenuModal__categoryName">{{ categoryItem.title }}</span>
 
           <ul class="headerMenuModal__categoryItems">
-            <li v-for="item in categoryItem.items" :key="item.id">
+            <li v-for="item in categoryItem.details" :key="item.id">
               <AppHeaderCategoryButton
-                :text="item.text"
+                :title="item.title"
                 :quantity="item.quantity"
                 @goToCurrentPage="goToCurrentPage"
               />
@@ -48,20 +48,20 @@ const { isScroll } = useScroll()
 const emit = defineEmits(['closeMenuModal'])
 
 const isCategoryActive = ref(false)
-const category = ref([])
+const details = ref([])
 const currentId = ref(null)
 
-const showContent = (args, id) => {
-  category.value = []
+const showContent = (item) => {
+  details.value = []
   isCategoryActive.value = false
   currentId.value = null
 
-  if (args) {
-    category.value = args
+  if (item.details) {
+    details.value = item.details
     isCategoryActive.value = true
-    currentId.value = id
+    currentId.value = item.id
   } else {
-    category.value = []
+    details.value = []
     console.log('Go to current page')
     emit('closeMenuModal')
   }

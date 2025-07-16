@@ -16,14 +16,14 @@
       />
     </svg>
 
-    <span class="headerBackButton__text">{{ props.text }}</span>
+    <span class="headerBackButton__text">{{ props.title }}</span>
   </button>
 </template>
 
 <script setup>
 // eslint-disable-next-line no-unused-vars
 const emit = defineEmits(['handleBack'])
-const props = defineProps(['text'])
+const props = defineProps(['title'])
 </script>
 
 <style scoped>

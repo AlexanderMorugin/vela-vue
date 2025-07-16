@@ -7,14 +7,14 @@
       <img
         v-if="props.item.img"
         :src="props.item.img"
-        :alt="props.item.text"
+        :alt="props.item.title"
         class="headerCatalogButton__image"
       />
-      <span class="headerCatalogButton__text">{{ props.item.text }}</span>
+      <span class="headerCatalogButton__text">{{ props.item.title }}</span>
     </div>
     <!-- Стрелка -->
     <svg
-      v-if="props.item.category || props.item.items"
+      v-if="props.item.details"
       class="headerCatalogButton__arrowBox"
       fill="none"
       viewBox="0 0 8 14"

@@ -1,10 +1,10 @@
 <template>
   <nav>
     <ul class="headerMenu">
-      <li v-for="item in headerMenu.category.slice(1, 6)" :key="item.id" class="headerMenu__item">
+      <li v-for="item in headerMenu.details.slice(1, 6)" :key="item.id" class="headerMenu__item">
         <button class="headerMenu__button">
-          <img :src="item.img" :alt="item.text" class="headerMenu__img" />
-          <span class="headerMenu__text">{{ item.text }}</span>
+          <img :src="item.img" :alt="item.title" class="headerMenu__img" />
+          <span class="headerMenu__text">{{ item.title }}</span>
         </button>
       </li>
     </ul>

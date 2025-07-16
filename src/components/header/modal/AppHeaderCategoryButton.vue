@@ -1,7 +1,7 @@
 <template>
   <button class="headerMenuModal__categoryItem" @click="$emit('goToCurrentPage')">
     <div class="headerMenuModal__categoryItemTextBox">
-      <span class="headerMenuModal__categoryItemName">{{ props.text }}</span>
+      <span class="headerMenuModal__categoryItemName">{{ props.title }}</span>
       <span class="headerMenuModal__categoryItemQuantity">{{ props.quantity }}</span>
     </div>
 
@@ -20,7 +20,7 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 const emit = defineEmits(['goToCurrentPage'])
-const props = defineProps(['text', 'quantity'])
+const props = defineProps(['title', 'quantity'])
 </script>
 
 <style scoped>
