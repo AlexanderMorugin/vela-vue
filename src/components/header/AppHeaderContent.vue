@@ -128,8 +128,8 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
   height: 100px;
   padding-top: 0;
 }
-.headerContent__container_long {
-}
+/* .headerContent__container_long {
+} */
 .headerContent__subContainer {
   position: relative;
   display: flex;
@@ -185,7 +185,8 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
   .headerContent__container {
     flex-direction: column;
     /* justify-content: flex-start; */
-    /* height: 146px; */
+    height: 100%;
+    overflow-y: scroll;
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;

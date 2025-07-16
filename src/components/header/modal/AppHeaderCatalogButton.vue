@@ -31,7 +31,7 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 const emit = defineEmits(['showContent'])
-const props = defineProps(['item', 'currentId'])
+const props = defineProps(['item', 'currentId', 'isButtonBackActive'])
 </script>
 
 <style scoped>
@@ -54,7 +54,7 @@ const props = defineProps(['item', 'currentId'])
 .headerCatalogButton__textBox {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 17px;
 }
 .headerCatalogButton__image {
   width: 24px;
@@ -128,6 +128,9 @@ const props = defineProps(['item', 'currentId'])
     border-radius: 6px;
     padding-left: 12px;
     padding-right: 12px;
+  }
+  .headerCatalogButton__textBox {
+    gap: 17px;
   }
   .headerCatalogButton__image {
     width: 24px;

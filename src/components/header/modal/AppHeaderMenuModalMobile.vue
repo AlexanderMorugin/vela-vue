@@ -1,55 +1,77 @@
 <template>
-  <!-- <Teleport to="body"> -->
   <div class="headerMenuModalMobile">
     <!-- Блок с адресом и соц сетями -->
     <AppHeaderMenuModalMobileTopBlock />
     <!-- Список каталога меню - Кнопки -->
     <ul class="headerMenuModalMobile__catalog">
-      <li v-for="item in headerMenu" :key="item.id">
-        <AppHeaderCatalogButton
-          :item="item"
-          :currentId="currentId"
-          @showContent="showContent(item.category, item.id)"
+      <!-- Кнопка Назад -->
+      <li>
+        <AppHeaderBackButton
+          v-if="isButtonBackActive"
+          :text="textOfButtonBack"
+          @handleBack="handleBack(textOfButtonBack)"
         />
+      </li>
+
+      <!-- Список Категорий всего каталога -->
+      <li v-for="item in menu" :key="item.id">
+        <AppHeaderCatalogButton :item="item" @showContent="showContent(item.category, item.id)" />
+
+        <!-- <AppHeaderCategoryButton
+
+          :text="element.text"
+          :quantity="element.quantity"
+          @goToCurrentPage="goToCurrentPage"
+        /> -->
       </li>
     </ul>
 
     <AppHeaderMakeCompButton />
 
     <AppHeaderTopNav />
-    <!-- Список категорий и их элементов, определяется по нажатию на кнопку выше  -->
   </div>
-  <!-- </Teleport> -->
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import AppHeaderMenuModalMobileTopBlock from './AppHeaderMenuModalMobileTopBlock.vue'
-// import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import { headerMenu } from '@/js/header-menu'
+import { headerCatalogMenu } from '@/js/header-catalog-menu'
+import AppHeaderBackButton from './AppHeaderBackButton.vue'
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
+import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
 import AppHeaderMakeCompButton from '../AppHeaderMakeCompButton.vue'
 import AppHeaderTopNav from '../AppHeaderTopNav.vue'
 
-const emit = defineEmits(['closeMenuModal'])
+const emit = defineEmits(['closeMenuModalMobile'])
 
-const isCategoryActive = ref(false)
-const category = ref([])
-const currentId = ref(null)
+const isButtonBackActive = ref(false)
+
+const menu = ref(headerMenu.category)
+const textOfButtonBack = ref(null)
 
 const showContent = (args, id) => {
-  category.value = []
-  isCategoryActive.value = false
-  currentId.value = null
+  menu.value = []
+  isButtonBackActive.value = false
 
   if (args) {
-    category.value = args
-    isCategoryActive.value = true
-    currentId.value = id
+    menu.value = args
+    isButtonBackActive.value = true
+
+    const currentObject = headerMenu.category.find((item) => item.id === id)
+    textOfButtonBack.value = currentObject.text
+
+    console.log(currentObject)
   } else {
-    category.value = []
     console.log('Go to current page')
-    emit('closeMenuModal')
+    emit('closeMenuModalMobile')
+  }
+}
+
+const handleBack = (args) => {
+  if (args === textOfButtonBack.value) {
+    isButtonBackActive.value = false
+    menu.value = headerMenu.category
   }
 }
 
@@ -66,12 +88,13 @@ const showContent = (args, id) => {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* height: 100vh; */
+  /* min-height: 100vh; */
   background: var(--white-primary);
   /* background: yellowgreen; */
   /* padding: 0 16px; */
   padding: 32px 16px;
   z-index: 10;
+  /* overflow-y: scroll; */
   animation: slide-from-left 0.3s ease-in-out;
 }
 .headerMenuModalMobile__catalog {

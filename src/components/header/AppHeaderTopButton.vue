@@ -6,6 +6,7 @@
       width="16"
       height="16"
       viewBox="0 0 16 16"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -20,6 +21,7 @@
       width="16"
       height="16"
       viewBox="0 0 16 16"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -69,6 +71,12 @@ const props = defineProps(['img', 'text', 'gap'])
 @media (max-width: 767px) {
   .headerTopButton__text {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 339px) {
+  .headerTopButton__text {
+    font-size: 14px;
   }
 }
 </style>

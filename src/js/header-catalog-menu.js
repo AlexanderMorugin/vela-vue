@@ -7,7 +7,7 @@ import NewBadgeImage from '../img/img-new-badge.svg'
 
 export const headerCatalogMenu = [
   {
-    id: 1,
+    id: 'Category-1',
     img: SmartPhoneImage,
     text: 'Смартфоны и гаджеты',
     category: [
@@ -43,7 +43,7 @@ export const headerCatalogMenu = [
     ],
   },
   {
-    id: 2,
+    id: 'Category-2',
     img: NotebookImage,
     text: 'Ноутбуки и компьютеры',
     category: [
@@ -66,7 +66,7 @@ export const headerCatalogMenu = [
     ],
   },
   {
-    id: 3,
+    id: 'Category-3',
     img: MonitorImage,
     text: 'Телевизоры и цифровое ТВ',
     category: [
@@ -89,7 +89,7 @@ export const headerCatalogMenu = [
     ],
   },
   {
-    id: 4,
+    id: 'Category-4',
     img: SpeakerImage,
     text: 'Аудиотехника',
     category: [
@@ -111,6 +111,6 @@ export const headerCatalogMenu = [
       },
     ],
   },
-  { id: 5, img: PromoImage, text: 'Акции' },
-  { id: 6, img: NewBadgeImage, text: 'Новинки' },
+  { id: 'Category-5', img: PromoImage, text: 'Акции' },
+  { id: 'Category-6', img: NewBadgeImage, text: 'Новинки' },
 ]

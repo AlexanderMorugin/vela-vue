@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul class="headerMenu">
-      <li v-for="item in headerMenu" :key="item.id" class="headerMenu__item">
+      <li v-for="item in headerMenu.category.slice(1, 6)" :key="item.id" class="headerMenu__item">
         <button class="headerMenu__button">
           <img :src="item.img" :alt="item.text" class="headerMenu__img" />
           <span class="headerMenu__text">{{ item.text }}</span>
