@@ -13,7 +13,7 @@ export const headerCatalogMenu = [
     category: [
       {
         id: 1,
-        name: 'Смартфоны',
+        text: 'Смартфоны',
         items: [
           { id: 1, text: 'Apple iPhone', quantity: 123 },
           { id: 2, text: 'Смартфоны', quantity: 227 },
@@ -28,7 +28,7 @@ export const headerCatalogMenu = [
       },
       {
         id: 2,
-        name: 'Гаджеты',
+        text: 'Гаджеты',
         items: [
           { id: 1, text: 'Смарт-часы', quantity: 15 },
           { id: 2, text: 'Смарт-кольца', quantity: 34 },
@@ -49,7 +49,7 @@ export const headerCatalogMenu = [
     category: [
       {
         id: 1,
-        name: 'Ноутбуки',
+        text: 'Ноутбуки',
         items: [
           { id: 1, text: 'Lenovo', quantity: 732 },
           { id: 2, text: 'HP', quantity: 456 },
@@ -57,7 +57,7 @@ export const headerCatalogMenu = [
       },
       {
         id: 2,
-        name: 'Компьютеры',
+        text: 'Компьютеры',
         items: [
           { id: 1, text: 'Электроника', quantity: 51 },
           { id: 2, text: 'Samsung', quantity: 314 },
@@ -72,7 +72,7 @@ export const headerCatalogMenu = [
     category: [
       {
         id: 1,
-        name: 'Телевизоры',
+        text: 'Телевизоры',
         items: [
           { id: 1, text: 'Sony', quantity: 213 },
           { id: 2, text: 'Panasonic', quantity: 154 },
@@ -80,7 +80,7 @@ export const headerCatalogMenu = [
       },
       {
         id: 2,
-        name: 'Цифровое ТВ',
+        text: 'Цифровое ТВ',
         items: [
           { id: 1, text: 'Триколор', quantity: 4 },
           { id: 2, text: 'НТВ+', quantity: 2 },
@@ -95,7 +95,7 @@ export const headerCatalogMenu = [
     category: [
       {
         id: 1,
-        name: 'Домашние кинотеатры',
+        text: 'Домашние кинотеатры',
         items: [
           { id: 1, text: 'Sharp', quantity: 29 },
           { id: 2, text: 'Kenwood', quantity: 43 },
@@ -103,7 +103,7 @@ export const headerCatalogMenu = [
       },
       {
         id: 2,
-        name: 'Магнитафоны',
+        text: 'Магнитафоны',
         items: [
           { id: 1, text: 'Hitachi', quantity: 48 },
           { id: 2, text: 'Teac', quantity: 62 },

@@ -4,12 +4,17 @@
     @click="$emit('showContent')"
   >
     <div class="headerCatalogButton__textBox">
-      <img :src="props.item.img" :alt="props.item.text" class="headerCatalogButton__image" />
+      <img
+        v-if="props.item.img"
+        :src="props.item.img"
+        :alt="props.item.text"
+        class="headerCatalogButton__image"
+      />
       <span class="headerCatalogButton__text">{{ props.item.text }}</span>
     </div>
     <!-- Стрелка -->
     <svg
-      v-if="props.item.category"
+      v-if="props.item.category || props.item.items"
       class="headerCatalogButton__arrowBox"
       fill="none"
       viewBox="0 0 8 14"

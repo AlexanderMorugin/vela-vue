@@ -19,7 +19,7 @@
           :key="categoryItem.id"
           class="headerMenuModal__category"
         >
-          <span class="headerMenuModal__categoryName">{{ categoryItem.name }}</span>
+          <span class="headerMenuModal__categoryName">{{ categoryItem.text }}</span>
 
           <ul class="headerMenuModal__categoryItems">
             <li v-for="item in categoryItem.items" :key="item.id">

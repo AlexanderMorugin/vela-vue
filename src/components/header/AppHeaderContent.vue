@@ -186,7 +186,7 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
     flex-direction: column;
     /* justify-content: flex-start; */
     height: 100%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
