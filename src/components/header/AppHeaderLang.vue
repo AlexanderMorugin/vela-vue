@@ -9,18 +9,12 @@
 
     <!-- Кнопки переключения языка -->
     <div class="headerLang__textBox">
-      <button
-        :class="['headerLang__text', { headerLang__text_active: isActiveLangRu }]"
-        @click="toggleLang('RU')"
-      >
-        RU
+      <button @click="toggleLang('RU')" class="headerLang__button">
+        <span :class="['headerLang__text', { headerLang__text_active: isActiveLangRu }]">RU</span>
       </button>
       <div class="headerLang__stick" />
-      <button
-        :class="['headerLang__text', { headerLang__text_active: isActiveLangEn }]"
-        @click="toggleLang('EN')"
-      >
-        EN
+      <button class="headerLang__button" @click="toggleLang('EN')">
+        <span :class="['headerLang__text', { headerLang__text_active: isActiveLangEn }]">EN</span>
       </button>
     </div>
   </div>
@@ -47,7 +41,7 @@ const toggleLang = (id) => {
 <style scoped>
 .headerLang {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   gap: 7px;
   width: fit-content;
   height: 24px;
@@ -69,12 +63,20 @@ const toggleLang = (id) => {
   width: fit-content;
   /* height: 24px; */
 }
+.headerLang__button {
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;
+}
 .headerLang__text {
+  display: inline-block;
   font-family: 'Maza';
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
   color: var(--grey-dark-primary);
+  white-space: nowrap;
+  overflow: hidden;
   opacity: 0.4;
   transition: 0.3s ease all;
 }
@@ -97,19 +99,20 @@ const toggleLang = (id) => {
 
 @media (max-width: 1023px) {
   .headerLang {
-    height: 18px;
+    height: 16px;
     padding-left: 14px;
   }
   .headerLang__image {
     width: 16px;
     height: 16px;
   }
-  /* .headerLang__textBox {
-    height: 18px;
-  } */
+  .headerLang__button {
+    height: 16px;
+  }
   .headerLang__text {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 16px;
+    /* vertical-align: middle; */
   }
 }
 
