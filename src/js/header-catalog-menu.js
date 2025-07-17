@@ -11,12 +11,10 @@ export const headerCatalogMenu = [
     img: SmartPhoneImage,
     title: 'Смартфоны и гаджеты',
     step: 3,
-    // name: 'smartphonesGadgets',
     details: [
       {
         id: 1,
         title: 'Смартфоны',
-        name: 'smartphones',
         step: 4,
         details: [
           { id: 1, title: 'Apple iPhone', quantity: 123 },
@@ -33,7 +31,6 @@ export const headerCatalogMenu = [
       {
         id: 2,
         title: 'Гаджеты',
-        name: 'gadgets',
         step: 4,
         details: [
           { id: 1, title: 'Смарт-часы', quantity: 15 },
@@ -53,12 +50,11 @@ export const headerCatalogMenu = [
     img: NotebookImage,
     title: 'Ноутбуки и компьютеры',
     step: 3,
-    // name: 'notebooksComputers',
     details: [
       {
         id: 1,
         title: 'Ноутбуки',
-        name: 'notebooks',
+        step: 4,
         details: [
           { id: 1, title: 'Lenovo', quantity: 732 },
           { id: 2, title: 'HP', quantity: 456 },
@@ -67,7 +63,7 @@ export const headerCatalogMenu = [
       {
         id: 2,
         title: 'Компьютеры',
-        name: 'computers',
+        step: 4,
         details: [
           { id: 1, title: 'Электроника', quantity: 51 },
           { id: 2, title: 'Samsung', quantity: 314 },
@@ -80,12 +76,11 @@ export const headerCatalogMenu = [
     img: MonitorImage,
     title: 'Телевизоры и цифровое ТВ',
     step: 3,
-    // name: 'tvDigitalTv',
     details: [
       {
         id: 1,
         title: 'Телевизоры',
-        name: 'tv',
+        step: 4,
         details: [
           { id: 1, title: 'Sony', quantity: 213 },
           { id: 2, title: 'Panasonic', quantity: 154 },
@@ -94,7 +89,7 @@ export const headerCatalogMenu = [
       {
         id: 2,
         title: 'Цифровое ТВ',
-        name: 'digitalTv',
+        step: 4,
         details: [
           { id: 1, title: 'Триколор', quantity: 4 },
           { id: 2, title: 'НТВ+', quantity: 2 },
@@ -107,11 +102,11 @@ export const headerCatalogMenu = [
     img: SpeakerImage,
     title: 'Аудиотехника',
     step: 3,
-    // name: 'audio',
     details: [
       {
         id: 1,
         title: 'Домашние кинотеатры',
+        step: 4,
         details: [
           { id: 1, title: 'Sharp', quantity: 29 },
           { id: 2, title: 'Kenwood', quantity: 43 },
@@ -120,6 +115,7 @@ export const headerCatalogMenu = [
       {
         id: 2,
         title: 'Магнитафоны',
+        step: 4,
         details: [
           { id: 1, title: 'Hitachi', quantity: 48 },
           { id: 2, title: 'Teac', quantity: 62 },
@@ -132,13 +128,11 @@ export const headerCatalogMenu = [
     img: PromoImage,
     title: 'Акции',
     step: 3,
-    // name: 'promo'
   },
   {
     id: 6,
     img: NewBadgeImage,
     title: 'Новинки',
     step: 3,
-    //  name: 'news'
   },
 ]

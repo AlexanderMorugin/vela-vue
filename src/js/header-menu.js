@@ -9,14 +9,12 @@ import { headerCatalogMenu } from './header-catalog-menu'
 export const headerMenu = {
   id: 1,
   title: 'Каталог',
-  // name: 'headerMenu',
   step: 1,
   details: [
     {
       id: 0,
       img: CatalogImage,
       title: 'Каталог',
-      // name: 'catalog',
       step: 2,
       details: headerCatalogMenu,
     },
@@ -24,14 +22,12 @@ export const headerMenu = {
       id: 1,
       img: PromoImage,
       title: 'Акции',
-      // name: 'promo'
       step: 2,
     },
     {
       id: 2,
       img: HotOfferImage,
       title: 'Горячее предложение',
-      // name: 'hot',
       step: 2,
       details: headerCatalogMenu,
     },
@@ -39,7 +35,6 @@ export const headerMenu = {
       id: 3,
       img: GiftImage,
       title: 'Подарочные наборы',
-      // name: 'gift',
       step: 2,
       details: headerCatalogMenu,
     },
@@ -47,7 +42,6 @@ export const headerMenu = {
       id: 4,
       img: EventImage,
       title: 'События',
-      // name: 'event',
       step: 2,
       details: headerCatalogMenu,
     },
@@ -56,7 +50,6 @@ export const headerMenu = {
       img: BrandsImage,
       title: 'Наши бренды',
       step: 2,
-      // name: 'brands',
     },
   ],
 }

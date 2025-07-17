@@ -13,21 +13,23 @@
       <li>
         <AppHeaderBackButton
           v-if="isButtonBackActive"
-          :title="currentItem.title"
-          @handleBack="handleBack(currentItem)"
+          :title="currentMenu.title"
+          @handleBack="handleBack(currentMenu)"
         />
       </li>
 
       <!-- Список Категорий всего каталога -->
-      <li v-for="item in currentItem.details" :key="item.id">
-        <AppHeaderCatalogButton :item="item" @showContent="showContent(item)" />
+      <li v-for="item in currentMenu.details" :key="item.id">
+        <!-- Кнопка меню стандартная, для перехода далее по меню -->
+        <AppHeaderCatalogButton v-if="item.step" :item="item" @showContent="showContent(item)" />
 
-        <!-- <AppHeaderCategoryButton
-
-          :text="element.text"
-          :quantity="element.quantity"
+        <!-- Кнопка меню конечная, для перехода на другую страницу -->
+        <AppHeaderCategoryButton
+          v-else
+          :title="item.title"
+          :quantity="item.quantity"
           @goToCurrentPage="goToCurrentPage"
-        /> -->
+        />
       </li>
     </ul>
 
@@ -41,10 +43,9 @@
 import { ref } from 'vue'
 import AppHeaderMenuModalMobileTopBlock from './AppHeaderMenuModalMobileTopBlock.vue'
 import { headerMenu } from '@/js/header-menu'
-import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import AppHeaderBackButton from './AppHeaderBackButton.vue'
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
-// import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
+import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
 import AppHeaderMakeCompButton from '../AppHeaderMakeCompButton.vue'
 import AppHeaderTopNav from '../AppHeaderTopNav.vue'
 
@@ -52,42 +53,48 @@ const emit = defineEmits(['closeMenuModalMobile'])
 
 const isButtonBackActive = ref(false)
 
-const currentItem = ref(headerMenu)
-// const currentStepItem = ref(null)
+const currentMenu = ref(headerMenu)
+const prevMenuStepTwo = ref(null)
+const prevMenuStepThree = ref(null)
 
 const showContent = (item) => {
   isButtonBackActive.value = false
 
   if (item.details) {
-    currentItem.value = item
-    // currentStepItem.value = item
-    isButtonBackActive.value = true
+    currentMenu.value = item
 
-    console.log('currentItem - ', currentItem.value)
-    // console.log('currentStepItem - ', currentStepItem.value)
+    isButtonBackActive.value = true
   } else {
     console.log('Go to current page')
     emit('closeMenuModalMobile')
+  }
+
+  if (item.step === 2) {
+    prevMenuStepTwo.value = item
+  }
+
+  if (item.step === 3) {
+    prevMenuStepThree.value = item
   }
 }
 
 const handleBack = (item) => {
   if (item.step === 2) {
-    currentItem.value = headerMenu
+    currentMenu.value = headerMenu
     isButtonBackActive.value = false
   }
-  // if (item.step === 3) {
-  //   currentItem.value = headerCatalogMenu.map((item) => item.step === 3)
-  // }
-
-  // console.log('handleBack - currentItem: ', item)
-  // console.log('handleBack - currentStepItem: ', currentStepItem.value)
+  if (item.step === 3) {
+    currentMenu.value = prevMenuStepTwo.value
+  }
+  if (item.step === 4) {
+    currentMenu.value = prevMenuStepThree.value
+  }
 }
 
-// const goToCurrentPage = () => {
-//   console.log('Go to current page')
-//   emit('closeMenuModal')
-// }
+const goToCurrentPage = () => {
+  console.log('Go to current page')
+  emit('closeMenuModalMobile')
+}
 </script>
 
 <style scoped>

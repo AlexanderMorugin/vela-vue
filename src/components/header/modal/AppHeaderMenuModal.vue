@@ -120,49 +120,6 @@ const goToCurrentPage = () => {
   flex-direction: column;
   gap: 16px;
 }
-/* .headerMenuModal__categoryItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-} */
-/* .headerMenuModal__categoryItemTextBox {
-  text-align: left;
-} */
-/* .headerMenuModal__categoryItemName {
-  font-family: 'Maza';
-  font-size: 16px;
-  line-height: 20px;
-  text-align: start;
-  color: var(--grey-dark-primary);
-  transition: 0.2s ease all;
-} */
-/* .headerMenuModal__categoryItemQuantity {
-  font-family: 'Maza';
-  font-size: 14px;
-  line-height: 20px;
-  vertical-align: bottom;
-  color: var(--grey-dark-primary);
-  opacity: 0.5;
-  padding-left: 10px;
-  transition: 0.4s ease all;
-} */
-/* .headerMenuModal__categoryItemArrow {
-  display: none;
-  transition: 0.3s ease all;
-} */
-/* .headerMenuModal__categoryItem:hover .headerMenuModal__categoryItemName {
-  color: var(--blue-primary);
-}
-.headerMenuModal__categoryItem:hover .headerMenuModal__categoryItemQuantity {
-  color: var(--blue-primary);
-  opacity: 1;
-}
-.headerMenuModal__categoryItem:hover .headerMenuModal__categoryItemArrow {
-  display: block;
-  stroke: var(--blue-primary);
-} */
 
 @media (max-width: 1279px) {
   .headerMenuModal_active {
@@ -178,12 +135,6 @@ const goToCurrentPage = () => {
   .headerMenuModal__categoryName {
     font-size: 20px;
   }
-  /* .headerMenuModal__categoryItem {
-    gap: 10px;
-  }
-  .headerMenuModal__categoryItemName {
-    font-size: 14px;
-  } */
 }
 
 @keyframes slide-down {
