@@ -47,10 +47,10 @@ const toggleLang = (id) => {
 <style scoped>
 .headerLang {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 7px;
   width: fit-content;
-  height: 48px;
+  height: 24px;
   padding-left: 37px;
 }
 .headerLang__image {
@@ -67,7 +67,7 @@ const toggleLang = (id) => {
   align-items: center;
   gap: 4px;
   width: fit-content;
-  height: 24px;
+  /* height: 24px; */
 }
 .headerLang__text {
   font-family: 'Maza';
@@ -97,16 +97,19 @@ const toggleLang = (id) => {
 
 @media (max-width: 1023px) {
   .headerLang {
-    height: 40px;
+    height: 18px;
     padding-left: 14px;
   }
   .headerLang__image {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
+  /* .headerLang__textBox {
+    height: 18px;
+  } */
   .headerLang__text {
     font-size: 14px;
-    line-height: 16px;
+    line-height: 18px;
   }
 }
 

@@ -150,6 +150,7 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
 .headerContent__subLine {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 .headerContent__profileContainer {
