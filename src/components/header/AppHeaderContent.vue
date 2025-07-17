@@ -121,15 +121,12 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
   padding-top: 16px;
   padding-left: 40px;
   padding-right: 40px;
-  border: 1px solid red;
 }
 .headerContent__container_small {
   align-items: center;
   height: 100px;
   padding-top: 0;
 }
-/* .headerContent__container_long {
-} */
 .headerContent__subContainer {
   position: relative;
   display: flex;
@@ -184,19 +181,13 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
 @media (max-width: 767px) {
   .headerContent__container {
     flex-direction: column;
-    /* justify-content: flex-start; */
     height: 100%;
-    /* overflow-y: scroll; */
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
   }
   .headerContent__subContainer {
-    /* position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%; */
+    padding-bottom: 24px;
     padding-left: 16px;
     padding-right: 16px;
   }

@@ -5,6 +5,8 @@ import GiftImage from '../img/img-gift.svg'
 import EventImage from '../img/img-event.svg'
 import BrandsImage from '../img/img-brands.svg'
 import { headerCatalogMenu } from './header-catalog-menu'
+import { headerHotOfferMenu } from './header-hot-offer-menu'
+import { headerEventMenu } from './header-event-menu'
 
 export const headerMenu = {
   id: 1,
@@ -29,7 +31,7 @@ export const headerMenu = {
       img: HotOfferImage,
       title: 'Горячее предложение',
       step: 2,
-      details: headerCatalogMenu,
+      details: headerHotOfferMenu,
     },
     {
       id: 3,
@@ -43,7 +45,7 @@ export const headerMenu = {
       img: EventImage,
       title: 'События',
       step: 2,
-      details: headerCatalogMenu,
+      details: headerEventMenu,
     },
     {
       id: 5,

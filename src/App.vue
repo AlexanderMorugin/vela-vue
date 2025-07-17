@@ -13,7 +13,7 @@ import AppHeader from '@/components/header/AppHeader.vue'
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr;
-  background: var(--white-primary);
+  background: var(--blue-primary);
 }
 /* @media (min-width: 1024px) {
   header {

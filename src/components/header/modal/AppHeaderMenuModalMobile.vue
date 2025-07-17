@@ -103,7 +103,7 @@ const goToCurrentPage = () => {
   flex-direction: column;
   width: 100%;
   background: var(--white-primary);
-  padding: 32px 16px;
+  padding: 8px 16px 32px 16px;
   z-index: 10;
   animation: slide-from-left 0.3s ease-in-out;
 }
