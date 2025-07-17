@@ -18,26 +18,3 @@
 
   --brown-primary: #cdbecd;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  /* margin: 0; */
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  /* display: flex;
-  flex-direction: column; */
-  /* position: relative; */
-  min-height: 100vh;
-  background: var(--white-primary);
-  font-family: 'Maza', sans-serif;
-  font-size: 16px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
