@@ -19,7 +19,7 @@ const emit = defineEmits(['goToPage'])
 <style scoped>
 .headerCustomMenuModal {
   position: absolute;
-  top: 65px;
+  top: 58px;
   left: 0;
   display: flex;
   width: 204px;
@@ -47,5 +47,16 @@ const emit = defineEmits(['goToPage'])
 }
 .headerCustomMenuModal__listItem:hover {
   color: var(--blue-primary);
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

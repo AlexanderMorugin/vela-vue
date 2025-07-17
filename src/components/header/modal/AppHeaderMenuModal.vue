@@ -3,7 +3,7 @@
     <div :class="['headerMenuModal', { headerMenuModal_active: isCategoryActive }]">
       <!-- Список каталога меню - Кнопки -->
       <ul class="headerMenuModal__catalog">
-        <li v-for="item in headerCatalogMenu" :key="item.id">
+        <li v-for="item in props.dataArray" :key="item.id">
           <AppHeaderCatalogButton
             :item="item"
             :currentId="currentId"
@@ -38,7 +38,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import { headerCatalogMenu } from '@/js/header-catalog-menu'
+// import { headerCatalogMenu } from '@/js/header-catalog-menu'
+
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
 import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
 import { useScroll } from '@/use/useScroll'
@@ -46,12 +47,15 @@ import { useScroll } from '@/use/useScroll'
 const { isScroll } = useScroll()
 
 const emit = defineEmits(['closeMenuModal'])
+const props = defineProps(['dataArray'])
 
 const isCategoryActive = ref(false)
 const details = ref([])
 const currentId = ref(null)
 
 const showContent = (item) => {
+  console.log(item)
+
   details.value = []
   isCategoryActive.value = false
   currentId.value = null

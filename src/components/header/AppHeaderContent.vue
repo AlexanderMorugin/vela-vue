@@ -23,7 +23,11 @@
         <AppHeaderMenu v-if="!isScroll" />
 
         <!-- Модалка всплывающего меню -->
-        <AppHeaderMenuModal v-if="isMenuModalOpen" @closeMenuModal="closeMenuModal" />
+        <AppHeaderMenuModal
+          v-if="isMenuModalOpen"
+          @closeMenuModal="closeMenuModal"
+          :dataArray="dataArray"
+        />
       </div>
 
       <!-- Блок Профиля в правом углу -->
@@ -81,12 +85,14 @@ import AppHeaderMenuModal from './modal/AppHeaderMenuModal.vue'
 import AppHeaderMenuModalMobile from './modal/AppHeaderMenuModalMobile.vue'
 import { useResizeMedium } from '@/use/useResizeMedium'
 import { useScroll } from '@/use/useScroll'
+import { headerCatalogMenu } from '@/js/header-catalog-menu'
 
 const { isScroll } = useScroll()
 const { isScreenMedium } = useResizeMedium()
 
 const isMenuModalOpen = ref(false)
 const isMenuModalMobileOpen = ref(false)
+const dataArray = ref(null)
 
 const handleClick = (args) => {
   if (args === 'favorite') {
@@ -100,8 +106,14 @@ const handleClick = (args) => {
   }
 }
 
-const openMenuModal = () => (isMenuModalOpen.value = !isMenuModalOpen.value)
-const closeMenuModal = () => (isMenuModalOpen.value = false)
+const openMenuModal = () => {
+  dataArray.value = headerCatalogMenu
+  isMenuModalOpen.value = !isMenuModalOpen.value
+}
+const closeMenuModal = () => {
+  dataArray.value = null
+  isMenuModalOpen.value = false
+}
 
 const openMenuModalMobile = () => (isMenuModalMobileOpen.value = !isMenuModalMobileOpen.value)
 const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)

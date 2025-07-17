@@ -9,17 +9,28 @@
       :data="dataArray"
       @goToPage="goToPage"
     />
+
+    <!-- Модалка Горячее предложение -->
+    <AppHeaderMenuModal
+      v-if="isHeaderMenuModalOpen"
+      @closeHeaderMenuModal="closeHeaderMenuModal"
+      :dataArray="dataArray"
+    />
   </button>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { headerEventMenu } from '@/js/header-event-menu'
+import { headerHotOfferMenu } from '@/js/header-hot-offer-menu'
+// import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import AppHeaderCustomMenuModal from './modal/AppHeaderCustomMenuModal.vue'
+import AppHeaderMenuModal from './modal/AppHeaderMenuModal.vue'
 
 const props = defineProps(['item'])
 
 const isHeaderCustomMenuModalOpen = ref(false)
+const isHeaderMenuModalOpen = ref(false)
 const dataArray = ref(null)
 
 const handleClickButton = (id) => {
@@ -27,17 +38,21 @@ const handleClickButton = (id) => {
     dataArray.value = headerEventMenu
     isHeaderCustomMenuModalOpen.value = !isHeaderCustomMenuModalOpen.value
   }
+  if (id === 2) {
+    dataArray.value = headerHotOfferMenu
+    isHeaderMenuModalOpen.value = !isHeaderMenuModalOpen.value
+  }
 }
 
 const goToPage = () => {
-  // dataArray.value = null
-  // isHeaderCustomMenuModalOpen.value = false
   console.log('Go to current page')
 }
 </script>
 
 <style scoped>
 .headerContentMenuButton {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;

@@ -44,12 +44,12 @@ const props = defineProps(['item', 'currentId', 'isButtonBackActive'])
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 31px;
-  width: 100%;
+  gap: 28px;
+  width: 338px;
   height: 50px;
   border-bottom: 1px solid var(--grey-thirdary);
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 28px;
 }
 .headerCatalogButton_active {
   background: var(--grey-thirdary);
@@ -101,14 +101,13 @@ const props = defineProps(['item', 'currentId', 'isButtonBackActive'])
   opacity: 0.5;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   .headerCatalogButton {
+    width: 100%;
     gap: 10px;
     padding-left: 10px;
     padding-right: 10px;
   }
-}
-@media (max-width: 1023px) {
   .headerCatalogButton__textBox {
     gap: 10px;
   }
