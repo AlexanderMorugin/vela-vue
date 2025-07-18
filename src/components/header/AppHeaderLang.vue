@@ -89,6 +89,9 @@ const toggleLang = (id) => {
   line-height: 24px;
   vertical-align: middle;
   color: var(--grey-dark-primary);
+  float: none;
+  zoom: 1;
+  overflow: hidden;
   /* white-space: nowrap; */
   /* overflow: hidden; */
   opacity: 0.4;
@@ -128,7 +131,7 @@ const toggleLang = (id) => {
   .headerLang__text {
     /* height: 16px; */
     font-size: 14px;
-    /* line-height: 16px; */
+    line-height: 16px;
     /* vertical-align: middle; */
   }
 }
