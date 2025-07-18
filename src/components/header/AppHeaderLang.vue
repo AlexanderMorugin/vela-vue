@@ -67,35 +67,13 @@ const toggleLang = (id) => {
   align-items: center;
   gap: 4px;
   width: fit-content;
-  /* height: 24px; */
 }
-/* .headerLang__button {
-  display: flex;
-  align-items: center;
-  font-family: 'Maza';
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--grey-dark-primary);
-  display: inline-block;
-  height: 24px;
-  vertical-align: middle;
-} */
 .headerLang__text {
   display: flex;
   align-items: center;
-  /* display: inline-block; */
   font-family: 'Maza';
-  /* font-family: Helvetica; */
   font-size: 16px;
-  /* line-height: 24px; */
-  /* vertical-align: middle; */
   color: var(--grey-dark-primary);
-  /* float: none;
-  text-align: center;
-  zoom: 1;
-  overflow: hidden; */
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
   opacity: 0.4;
   transition: 0.3s ease all;
 
@@ -120,21 +98,14 @@ const toggleLang = (id) => {
 
 @media (max-width: 1023px) {
   .headerLang {
-    /* height: 16px; */
     padding-left: 14px;
   }
   .headerLang__image {
     width: 16px;
     height: 16px;
   }
-  /* .headerLang__button {
-    height: 16px;
-  } */
   .headerLang__text {
-    /* height: 16px; */
     font-size: 14px;
-    /* line-height: 16px; */
-    /* vertical-align: middle; */
   }
 }
 

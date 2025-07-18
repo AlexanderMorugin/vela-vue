@@ -1,29 +1,31 @@
 <template>
-  <button class="headerContentMenuButton" @click="handleClickButton(props.item.id)">
-    <img :src="props.item.img" :alt="props.item.title" class="headerContentMenuButton__img" />
-    <span class="headerContentMenuButton__text">{{ props.item.title }}</span>
+  <div class="headerContentMenuButton__container">
+    <button class="headerContentMenuButton" @click="handleClickButton(props.item.id)">
+      <img :src="props.item.img" :alt="props.item.title" class="headerContentMenuButton__img" />
+      <span class="headerContentMenuButton__text">{{ props.item.title }}</span>
 
-    <!-- Маленькая модалка по клику кнопки События -->
-    <AppHeaderCustomMenuModal
-      v-if="isHeaderCustomMenuModalOpen"
-      :data="dataArray"
-      @goToPage="goToPage"
-    />
+      <!-- Маленькая модалка по клику кнопки События -->
+      <AppHeaderCustomMenuModal
+        v-if="isHeaderCustomMenuModalOpen"
+        :data="dataArray"
+        @goToPage="goToPage"
+      />
+    </button>
 
     <!-- Модалка Горячее предложение -->
     <AppHeaderMenuModal
       v-if="isHeaderMenuModalOpen"
-      @closeHeaderMenuModal="closeHeaderMenuModal"
+      @closeMenuModal="closeHeaderMenuModal"
       :dataArray="dataArray"
+      tag="contentMenuButton"
     />
-  </button>
+  </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { headerEventMenu } from '@/js/header-event-menu'
 import { headerHotOfferMenu } from '@/js/header-hot-offer-menu'
-// import { headerCatalogMenu } from '@/js/header-catalog-menu'
 import AppHeaderCustomMenuModal from './modal/AppHeaderCustomMenuModal.vue'
 import AppHeaderMenuModal from './modal/AppHeaderMenuModal.vue'
 
@@ -32,6 +34,8 @@ const props = defineProps(['item'])
 const isHeaderCustomMenuModalOpen = ref(false)
 const isHeaderMenuModalOpen = ref(false)
 const dataArray = ref(null)
+
+const closeHeaderMenuModal = () => (isHeaderMenuModalOpen.value = false)
 
 const handleClickButton = (id) => {
   if (id === 4) {
@@ -50,9 +54,10 @@ const goToPage = () => {
 </script>
 
 <style scoped>
-.headerContentMenuButton {
+.headerContentMenuButton__container {
   position: relative;
-
+}
+.headerContentMenuButton {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,11 @@
 <template>
-  <div :class="['', { headerMenuModalContainer: isScroll }]">
+  <component
+    :is="
+      props.tag === 'contentMenuButton'
+        ? AppHeaderMenuModalButtonLayout
+        : AppHeaderMenuModalScrollLayout
+    "
+  >
     <div :class="['headerMenuModal', { headerMenuModal_active: isCategoryActive }]">
       <!-- Список каталога меню - Кнопки -->
       <ul class="headerMenuModal__catalog">
@@ -33,29 +39,24 @@
         </li>
       </ul>
     </div>
-  </div>
+  </component>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-// import { headerCatalogMenu } from '@/js/header-catalog-menu'
-
 import AppHeaderCatalogButton from './AppHeaderCatalogButton.vue'
 import AppHeaderCategoryButton from './AppHeaderCategoryButton.vue'
-import { useScroll } from '@/use/useScroll'
-
-const { isScroll } = useScroll()
+import AppHeaderMenuModalScrollLayout from '@/layouts/AppHeaderMenuModalScrollLayout.vue'
+import AppHeaderMenuModalButtonLayout from '@/layouts/AppHeaderMenuModalButtonLayout.vue'
 
 const emit = defineEmits(['closeMenuModal'])
-const props = defineProps(['dataArray'])
+const props = defineProps(['dataArray', 'tag'])
 
 const isCategoryActive = ref(false)
 const details = ref([])
 const currentId = ref(null)
 
 const showContent = (item) => {
-  console.log(item)
-
   details.value = []
   isCategoryActive.value = false
   currentId.value = null
@@ -78,13 +79,10 @@ const goToCurrentPage = () => {
 </script>
 
 <style scoped>
-.headerMenuModalContainer {
-  position: fixed;
-  top: 92px;
-}
 .headerMenuModal {
   display: flex;
-  width: fit-content;
+  width: 100%;
+  max-width: 338px;
   background: var(--white-primary);
   border-radius: 8px;
   box-shadow: rgba(157, 157, 157, 0.35) 0px 0px 10px 0px;
@@ -97,6 +95,8 @@ const goToCurrentPage = () => {
 .headerMenuModal_active {
   gap: 40px;
   padding-right: 28px;
+  width: 100%;
+  max-width: 892px;
 }
 .headerMenuModal__catalog {
   display: flex;

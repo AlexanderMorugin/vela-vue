@@ -8,16 +8,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* margin: 0; */
   font-weight: normal;
   padding: 0;
   margin: 0;
 }
 
 body {
-  /* display: flex;
-  flex-direction: column; */
-  /* position: relative; */
   min-height: 100vh;
   background: var(--white-primary);
   font-family: 'Maza', sans-serif;
@@ -25,20 +21,10 @@ body {
   font-weight: 400;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
-  /* text-rendering: geometricPrecision; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; */
-
-  /* -webkit-text-size-adjust: none; */
-
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: none;
-
-  /* -webkit-font-feature-settings: 'kern' 1; */
 }
 
 button {
@@ -53,6 +39,4 @@ button {
 ul,
 li {
   list-style: none;
-  /* margin: 0;
-  padding: 0; */
 }

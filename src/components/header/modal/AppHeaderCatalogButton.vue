@@ -45,7 +45,7 @@ const props = defineProps(['item', 'currentId', 'isButtonBackActive'])
   justify-content: space-between;
   align-items: center;
   gap: 28px;
-  width: 338px;
+  width: 100%;
   height: 50px;
   border-bottom: 1px solid var(--grey-thirdary);
   padding-left: 30px;
@@ -103,7 +103,6 @@ const props = defineProps(['item', 'currentId', 'isButtonBackActive'])
 
 @media (max-width: 1023px) {
   .headerCatalogButton {
-    width: 100%;
     gap: 10px;
     padding-left: 10px;
     padding-right: 10px;
