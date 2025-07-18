@@ -9,12 +9,18 @@
 
     <!-- Кнопки переключения языка -->
     <div class="headerLang__textBox">
-      <button @click="toggleLang('RU')" class="headerLang__button">
-        <span :class="['headerLang__text', { headerLang__text_active: isActiveLangRu }]">RU</span>
+      <button
+        @click="toggleLang('RU')"
+        :class="['headerLang__text', { headerLang__text_active: isActiveLangRu }]"
+      >
+        RU
       </button>
       <div class="headerLang__stick" />
-      <button class="headerLang__button" @click="toggleLang('EN')">
-        <span :class="['headerLang__text', { headerLang__text_active: isActiveLangEn }]">EN</span>
+      <button
+        @click="toggleLang('EN')"
+        :class="['headerLang__text', { headerLang__text_active: isActiveLangEn }]"
+      >
+        EN
       </button>
     </div>
   </div>
@@ -63,20 +69,28 @@ const toggleLang = (id) => {
   width: fit-content;
   /* height: 24px; */
 }
-.headerLang__button {
+/* .headerLang__button {
+  display: flex;
+  align-items: center;
+  font-family: 'Maza';
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--grey-dark-primary);
   display: inline-block;
   height: 24px;
   vertical-align: middle;
-}
+} */
 .headerLang__text {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  /* display: inline-block; */
   font-family: 'Maza';
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
   color: var(--grey-dark-primary);
-  white-space: nowrap;
-  overflow: hidden;
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
   opacity: 0.4;
   transition: 0.3s ease all;
 }
@@ -99,19 +113,20 @@ const toggleLang = (id) => {
 
 @media (max-width: 1023px) {
   .headerLang {
-    height: 16px;
+    /* height: 16px; */
     padding-left: 14px;
   }
   .headerLang__image {
     width: 16px;
     height: 16px;
   }
-  .headerLang__button {
+  /* .headerLang__button {
     height: 16px;
-  }
+  } */
   .headerLang__text {
+    /* height: 16px; */
     font-size: 14px;
-    line-height: 16px;
+    /* line-height: 16px; */
     /* vertical-align: middle; */
   }
 }
