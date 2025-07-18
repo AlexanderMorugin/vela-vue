@@ -84,12 +84,14 @@ const toggleLang = (id) => {
   display: flex;
   align-items: center;
   /* display: inline-block; */
-  font-family: 'Maza';
+  /* font-family: 'Maza'; */
+  font-family: Helvetica;
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
   color: var(--grey-dark-primary);
   float: none;
+  text-align: center;
   zoom: 1;
   overflow: hidden;
   /* white-space: nowrap; */
