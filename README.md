@@ -1,35 +1,56 @@
-# .
+<h1 align="center">Проект шапки сайта "Vela"</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+Ссылка: https://vela-vue.vercel.app/
 
-## Recommended IDE Setup
+![XWEAR Demo](/xwear-promo.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## О проекте
 
-## Customize configuration
+- Приложение выполнено на JavaScript фреймворке Vue 3, без использования дополнительных библиотек:
+- Адаптивная верстка (десктоп + мобильная версия). Минимальное количество брейкпоинтов ширины экрана (1440px, 1280px, 1024px, 768px, 340px);
+- Чистая, аккуратная структура HTML/CSS;
+- Использованы Flexbox и Grid для построения сеток;
+- Использован БЭМ-нейминг классов;
+- Минимизировано использование сторонних библиотек (нет Bootstrap и подобных фреймворков);
+- Настроена базовая сборка проекта через Webpack;
+- Сделаны плавные анимации при наведении на элементы меню (hover-эффекты).
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Приложение задеплоено на бесплатной облачной платформе Vercel.
 
-## Project Setup
+## Приложение выполнено согласно макета Figma:
 
-```sh
-npm install
+## Технические требования::
+
+- Валидная верстка (проверена через валидатор W3C);
+- Корректное отображение в актуальных версиях браузеров (Chrome, Firefox, Safari);
+- Стандартная кодировка — UTF-8;
+- Папка проекта готова к развертыванию (index.html + папки css/js/img/fonts).
+
+## Приложение полностью адаптировано и имеет три основных брейкпоинта 1440px, 1024px, 768px, 340px. Минимальная ширина экрана предусматривается как 320px.
+
+## Не используется TypeScript и SCSS. Не прописаны никакие мета-теги. Сайт представляет собой SPA приложение, т.е. одностраничный пустой документ (глазами поисковых роботов) с выполнением JavaScript кода на стороне клиента.
+
+## Как запустить проект:
+
+Клонирование репозитория
+
+```
+git clone https://github.com/AlexanderMorugin/vela-vue
 ```
 
-### Compile and Hot-Reload for Development
+Установка зависимостей
 
-```sh
+```
+npm i
+```
+
+Запуск проекта
+
+```
 npm run dev
 ```
 
-### Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Александр Моругин\
+июль 2025г

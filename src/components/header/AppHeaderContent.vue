@@ -133,8 +133,6 @@ const closeMenuModalMobile = () => (isMenuModalMobileOpen.value = false)
   padding-top: 16px;
   padding-left: 40px;
   padding-right: 40px;
-
-  /* border: 1px solid red; */
 }
 .headerContent__container_small {
   align-items: center;

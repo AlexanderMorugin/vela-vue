@@ -104,7 +104,6 @@ const goToCurrentPage = () => {
   position: absolute;
   top: 188px;
   left: 0;
-
   display: flex;
   flex-direction: column;
   width: 100%;

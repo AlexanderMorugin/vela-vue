@@ -76,7 +76,6 @@ const toggleLang = (id) => {
   color: var(--grey-dark-primary);
   opacity: 0.4;
   transition: 0.3s ease all;
-
   padding: 0;
 }
 .headerLang__text:hover {
