@@ -1,6 +1,7 @@
 @font-face {
   src:
     local('Maza'),
+    url(./MAZ55.otf) format('opentype'),
     url(./Maza-W00-Regular.ttf) format('truetype'),
     url(./Maza-W00-Regular.woff2) format('woff2'),
     url(./Maza-W00-Regular.woff) format('woff');

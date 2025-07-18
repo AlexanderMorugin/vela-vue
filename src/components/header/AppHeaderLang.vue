@@ -84,8 +84,8 @@ const toggleLang = (id) => {
   display: flex;
   align-items: center;
   /* display: inline-block; */
-  /* font-family: 'Maza'; */
-  font-family: Helvetica;
+  font-family: 'Maza';
+  /* font-family: Helvetica; */
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
