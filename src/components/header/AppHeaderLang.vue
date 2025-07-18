@@ -93,6 +93,8 @@ const toggleLang = (id) => {
   /* overflow: hidden; */
   opacity: 0.4;
   transition: 0.3s ease all;
+
+  padding: 0;
 }
 .headerLang__text:hover {
   color: var(--blue-primary);
