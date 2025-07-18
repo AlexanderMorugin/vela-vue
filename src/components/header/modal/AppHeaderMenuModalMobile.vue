@@ -1,42 +1,44 @@
 <template>
-  <div class="headerMenuModalMobile">
-    <!-- Блок с адресом и соц сетями -->
-    <AppHeaderMenuModalMobileTopBlock v-if="!isButtonBackActive" />
-    <!-- Список каталога меню - Кнопки -->
-    <ul
-      :class="[
-        'headerMenuModalMobile__catalog',
-        { headerMenuModalMobile__catalog_active: isButtonBackActive },
-      ]"
-    >
-      <!-- Кнопка Назад -->
-      <li>
-        <AppHeaderBackButton
-          v-if="isButtonBackActive"
-          :title="currentMenu.title"
-          @handleBack="handleBack(currentMenu)"
-        />
-      </li>
+  <Teleport to="body">
+    <div class="headerMenuModalMobile">
+      <!-- Блок с адресом и соц сетями -->
+      <AppHeaderMenuModalMobileTopBlock v-if="!isButtonBackActive" />
+      <!-- Список каталога меню - Кнопки -->
+      <ul
+        :class="[
+          'headerMenuModalMobile__catalog',
+          { headerMenuModalMobile__catalog_active: isButtonBackActive },
+        ]"
+      >
+        <!-- Кнопка Назад -->
+        <li>
+          <AppHeaderBackButton
+            v-if="isButtonBackActive"
+            :title="currentMenu.title"
+            @handleBack="handleBack(currentMenu)"
+          />
+        </li>
 
-      <!-- Список Категорий всего каталога -->
-      <li v-for="item in currentMenu.details" :key="item.id">
-        <!-- Кнопка меню стандартная, для перехода далее по меню -->
-        <AppHeaderCatalogButton v-if="item.step" :item="item" @showContent="showContent(item)" />
+        <!-- Список Категорий всего каталога -->
+        <li v-for="item in currentMenu.details" :key="item.id">
+          <!-- Кнопка меню стандартная, для перехода далее по меню -->
+          <AppHeaderCatalogButton v-if="item.step" :item="item" @showContent="showContent(item)" />
 
-        <!-- Кнопка меню конечная, для перехода на другую страницу -->
-        <AppHeaderCategoryButton
-          v-else
-          :title="item.title"
-          :quantity="item.quantity"
-          @goToCurrentPage="goToCurrentPage"
-        />
-      </li>
-    </ul>
+          <!-- Кнопка меню конечная, для перехода на другую страницу -->
+          <AppHeaderCategoryButton
+            v-else
+            :title="item.title"
+            :quantity="item.quantity"
+            @goToCurrentPage="goToCurrentPage"
+          />
+        </li>
+      </ul>
 
-    <AppHeaderMakeCompButton v-if="!isButtonBackActive" />
+      <AppHeaderMakeCompButton v-if="!isButtonBackActive" />
 
-    <AppHeaderTopNav v-if="!isButtonBackActive" />
-  </div>
+      <AppHeaderTopNav v-if="!isButtonBackActive" />
+    </div>
+  </Teleport>
 </template>
 
 <script setup>
@@ -99,6 +101,10 @@ const goToCurrentPage = () => {
 
 <style scoped>
 .headerMenuModalMobile {
+  position: absolute;
+  top: 188px;
+  left: 0;
+
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -15,4 +15,10 @@ import AppHeaderContent from './AppHeaderContent.vue'
   position: sticky;
   top: -34px;
 }
+@media (max-width: 767px) {
+  .header {
+    position: relative;
+    top: 0;
+  }
+}
 </style>

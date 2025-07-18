@@ -9,7 +9,7 @@ import AppHeader from '@/components/header/AppHeader.vue'
 
 <style scoped>
 .main-layout {
-  min-height: 100vh;
+  height: 1000px;
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr;
