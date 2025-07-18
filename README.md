@@ -2,7 +2,7 @@
 
 Ссылка: https://vela-vue.vercel.app/
 
-![XWEAR Demo](/xwear-promo.png)
+![Vela Demo](/vela-promo.png)
 
 ## О проекте
 
